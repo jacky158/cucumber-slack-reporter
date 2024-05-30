@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.qatools</groupId>
+    <groupId>io.github.jacky158</groupId>
     <artifactId>slack-integration</artifactId>
     <version>1.0.0</version>
     <name>Cucumber Slack Integration</name>
@@ -18,15 +18,15 @@
     <developers>
         <developer>
             <name>Vinod Reddy</name>
-            <email>vinodkumarv8197@gmail.com</email>
-            <organization>io.github.automationreddy</organization>
-            <organizationUrl>https://github.com/AutomationReddy/java-slack-notify</organizationUrl>
+            <email>namnv@younetgroup.com.com</email>
+            <organization>jacky158</organization>
+            <organizationUrl>https://github.com/jacky158</organizationUrl>
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/AutomationReddy/java-slack-notify.git</connection>
-        <developerConnection>scm:git:ssh://github.com:AutomationReddy/java-slack-notify.git</developerConnection>
-        <url>http://github.com/AutomationReddy/java-slack-notify</url>
+        <connection>scm:git:git://github.com:jacky158/cucumber-slack-reporter.git</connection>
+        <developerConnection>scm:git:ssh://github.com:jacky158/cucumber-slack-reporter.git</developerConnection>
+        <url>https://github.com/jacky158/cucumber-slack-reporter.git</url>
     </scm>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -69,19 +69,19 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.5</version>
+                <groupId>org.sonatype.central</groupId>
+                <artifactId>central-publishing-maven-plugin</artifactId>
+                <version>0.4.0</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    <publishingServerId>central</publishingServerId>
+                    <tokenAuth>true</tokenAuth>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
@@ -97,7 +97,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>2.2.1</version>
+                        <version>3.3.1</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
